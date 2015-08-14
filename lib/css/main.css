@@ -1,3 +1,30 @@
-header strong {
-    color: red;
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*circle nav*/
+.circle-nav-container {
+    position: relative;
+    margin: 50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px #dddddd solid;
+}
+.circle-nav-container {
+    transition:  transform 0.7s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.circle-nav-container:hover {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.circle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
 }
