@@ -236,7 +236,7 @@ nav {}
 
 .menu-open {
     position: fixed;
-    background: url('/lib/images/menu-open.svg');
+    background: url('./../images/menu-open.svg');
     width: 65px;
     height: 65px;
     display: block;
@@ -249,7 +249,7 @@ nav {}
 
 .menu-close {
     position: fixed;
-    background: url('/lib/images/menu-close.svg');
+    background: url('./../images/menu-close.svg');
     width: 65px;
     height: 65px;
     display: block;
