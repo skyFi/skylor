@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-ng-app="app">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,41 +7,67 @@
     <meta name="keywords" content="主页,个人主页,乐正闯皇">
     <title>乐正闯皇</title>
     <link rel="stylesheet" href="lib/css/main.css" charset="utf-8">
+    <link rel="stylesheet" href="lib/css/normalize.css" charset="utf-8">
 </head>
-<body class="viewing-index-0">
-
-<header>
-    <div class="logo"></div>
-    <div class="about">
-        <h1>乐正闯皇</h1>
-        <h2>Designer, Frontend Developer & overall web enthusiast</h2>
-    </div>
-</header>
-<div>
-    <div id="particles-js"></div>
-</div>
-
-<nav>
-    <span id="trigger-overlay" class="menu-open">Open menu</span>
-    <div class="nav-wrapper">
-        <span class="menu-close">Close menu</span>
-        <div class="links">
-            <ul class="navigation">
-                <li><span data-index="0">Intro</span></li>
-                <li><span data-index="1">crafted.li</span></li>
-                <li><span data-index="2">UX und Tollerei</span></li>
-                <li><span data-index="3">inspirabox</span></li>
-                <li><span data-index="4">lauftagebu.ch</span></li>
-                <li><span data-index="5">About</span></li>
+<body data-ng-controller="skylorController">
+    <header>
+        <div class="logo"></div>
+        <div class="about">
+            <h1>乐正闯皇</h1>
+            <h2>Designer, Frontend Developer & overall web enthusiast</h2>
+            <ul class="horizontal-nav clearfix">
+                <li><a href="javascript:void (0);" data-ng-click="nav($event)" nav="1">导航</a></li>
+                <li><a href="javascript:void (0);" data-ng-click="nav($event)" nav="2">导航</a></li>
+                <li><a href="javascript:void (0);" data-ng-click="nav($event)" nav="3">导航</a></li>
+                <li><a href="javascript:void (0);" data-ng-click="nav($event)" nav="4">导航</a></li>
             </ul>
         </div>
-    </div>
-</nav>
-
+    </header>
+    <nav>
+        <span id="trigger-overlay" class="menu-open">Open menu</span>
+        <div class="nav-wrapper">
+            <span class="menu-close">Close menu</span>
+            <div class="links">
+                <ul class="navigation">
+                    <li><span data-index="0">Intro</span></li>
+                    <li><span data-index="1">crafted.li</span></li>
+                    <li><span data-index="2">UX und Tollerei</span></li>
+                    <li><span data-index="3">inspirabox</span></li>
+                    <li><span data-index="4">lauftagebu.ch</span></li>
+                    <li><span data-index="5">About</span></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="particles-js"></div>
+    <section>
+        <div class="stage view1">
+            <div class="stage-contain">
+                something1
+            </div>
+        </div>
+        <div class="stage view2">
+            <div class="stage-contain">
+                something2
+            </div>
+        </div>
+        <div class="stage view3">
+            <div class="stage-contain">
+                something3
+            </div>
+        </div>
+        <div class="stage view4">
+            <div class="stage-contain">
+                something4
+            </div>
+        </div>
+    </section>
 </body>
 <script src="lib/js/lodash/lodash.min.js"></script>
 <script src="lib/js/jquery/jquery-2.1.3.min.js"></script>
+<script src="lib/js/particles/particles.min.js"></script>
+<script src="lib/js/angular-1.3.15/angular.min.js"></script>
 <script src="lib/js/jquery/skylorjquery-1.1.1.js"></script>
 <script src="lib/js/index.js"></script>
-<script src="lib/js/particles/particles.min.js"></script>
+<script src="lib/js/index-angular.js"></script>
 </html>
