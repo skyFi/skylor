@@ -133,6 +133,7 @@ body {
 header {
     position: fixed;
     padding: 60px;
+    opacity: 0.5;
     background: #fff;
     left: 0;
     top: 0;
