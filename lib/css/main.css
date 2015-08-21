@@ -36,6 +36,16 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #4E6EF7;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
 .frame-left {
     position: fixed;
     width: 10px;
@@ -133,6 +143,8 @@ header {
 }
 
 header .logo {
+    background: radial-gradient(circle at 100px 100px, #5cabff, #000);
+    border-radius: 50%;
     background-size: cover;
     cursor: pointer;
     width: 130px;
