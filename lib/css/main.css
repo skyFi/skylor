@@ -25,15 +25,18 @@ a:active { top: 2px; }
 html, body {
     height: 100%;
     overflow: hidden;
+    position: relative;
+}
+
+#canvas{
+    float: left;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0);
 }
 
 html.imprint, body.imprint {
     height: 100%;
     overflow: auto;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
 }
 
 #skylor {
@@ -44,6 +47,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
+}
+
+.stage-contain {
+    position: relative;
 }
 
 .frame-left {

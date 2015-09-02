@@ -11,7 +11,11 @@
 </head>
 <body data-ng-controller="skylorController">
     <header>
-        <div class="logo"></div>
+        <!--<div class="logo">-->
+        <!--</div>-->
+        <canvas id='canvas' width='150' height='150'>
+            Canvas not supported
+        </canvas>
         <div class="about">
             <h1>乐正闯皇</h1>
             <h2>Designer, Frontend Developer & overall web enthusiast</h2>
@@ -43,7 +47,7 @@
     <section>
         <div class="stage view1">
             <div class="stage-contain">
-                something1
+
             </div>
         </div>
         <div class="stage view2">
@@ -70,4 +74,5 @@
 <script src="lib/js/jquery/skylorjquery-1.1.1.js"></script>
 <script src="lib/js/index.js"></script>
 <script src="lib/js/index-angular.js"></script>
+<script src="games/canvas/canvas.js"></script>
 </html>
