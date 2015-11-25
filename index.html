@@ -6,73 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords" content="主页,个人主页,Skylor.min">
     <title>Skylor.min</title>
-    <link rel="stylesheet" href="lib/css/main.css" charset="utf-8">
     <link rel="stylesheet" href="lib/css/normalize.css" charset="utf-8">
+    <link rel="stylesheet" href="lib/css/main.css" charset="utf-8">
 </head>
-<body data-ng-controller="skylorController">
+<body data-ng-controller="IndexController">
     <header>
         <!--<div class="logo">-->
         <!--</div>-->
         <canvas id='canvas' width='150' height='150'>
-            Canvas not supported
+            Canvas not supported (clock)
         </canvas>
-        <div class="about">
-            <h1>Skylor.min</h1>
-            <h2>Designer, Frontend Developer & overall web enthusiast</h2>
-            <ul class="horizontal-nav clearfix">
-                <li><span data-ng-click="nav($event)" nav="1">导航</span></li>
-                <li><span data-ng-click="nav($event)" nav="2">导航</span></li>
-                <li><span data-ng-click="nav($event)" nav="3">导航</span></li>
-                <li><span data-ng-click="nav($event)" nav="4">导航</span></li>
-            </ul>
-        </div>
-    </header>
-    <nav>
-        <span id="trigger-overlay" class="menu-open">Open menu</span>
-        <div class="nav-wrapper">
-            <span class="menu-close">Close menu</span>
-            <div class="links">
-                <ul class="navigation">
-                    <li><span data-index="0">Intro</span></li>
-                    <li><span data-index="1">crafted.li</span></li>
-                    <li><span data-index="2">UX und Tollerei</span></li>
-                    <li><span data-index="3">inspirabox</span></li>
-                    <li><span data-index="4">lauftagebu.ch</span></li>
-                    <li><span data-index="5">About</span></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div id="skylor"></div>
-    <section>
-        <div class="stage view1">
-            <div class="stage-contain">
 
-            </div>
-        </div>
-        <div class="stage view2">
-            <div class="stage-contain">
-                something2
-            </div>
-        </div>
-        <div class="stage view3">
-            <div class="stage-contain">
-                something3
-            </div>
-        </div>
-        <div class="stage view4">
-            <div class="stage-contain">
-                something4
-            </div>
-        </div>
-    </section>
+    </header>
 </body>
-<script src="lib/js/lodash/lodash.min.js"></script>
-<script src="lib/js/jquery/jquery-2.1.3.min.js"></script>
-<script src="lib/js/particles/particles.min.js"></script>
-<script src="lib/js/angular-1.3.15/angular.min.js"></script>
-<script src="lib/js/jquery/skylorjquery-1.1.1.js"></script>
+<script src="lib/js/lib/lodash/lodash.min.js"></script>
+<script src="lib/js/lib/jquery/jquery-2.1.3.min.js"></script>
+<script src="lib/js/lib/particles/particles.min.js"></script>
+<script src="lib/js/lib/angular-1.3.15/angular.min.js"></script>
+<script src="lib/js/lib/jquery/skylorjquery-1.1.1.js"></script>
 <script src="lib/js/index.js"></script>
 <script src="lib/js/index-angular.js"></script>
-<script src="games/canvas/canvas.js"></script>
 </html>
