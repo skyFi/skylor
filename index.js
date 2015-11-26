@@ -2,7 +2,7 @@
  * Created by skylor on 2015/8/14.
  */
 
-var app = angular.module("app", ["ngRoute"]);
+var app = angular.module("app", ["ui.router"]);
 
 app.controller('IndexController', ['$scope', function ($scope) {
     var self = this;
@@ -16,28 +16,20 @@ app.controller('HomeController', ['$scope', function ($scope) {
     $scope.home = 'homeqqqqqqq'
 }]);
 
-app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-    $routeProvider
-        .when('/home', {
-            templateUrl: 'lib/template/home/home.html',
-            controller: 'HomeController',
-            resolve: {
-                // I will cause a 1 second delay
-                delay: function ($q, $timeout) {
-                    var delay = $q.defer();
-                    $timeout(delay.resolve, 1000);
-                    return delay.promise;
-                }
-            }
+    $urlRouterProvider.otherwise('/index');
+    $stateProvider
+        .state('index',{
+            url           : '/index',
+            templateUrl    : 'index.html'
         })
-        .otherwise('/', {
-            templateUrl: 'lib/template/home/home.html',
-            controller: 'HomeController'
+        .state('home',{
+            url           : '/home',
+            templateUrl     : 'lib/template/home/home.html'
         });
-
     // configure html5 to get links working on jsfiddle
-    $locationProvider.html5Mode(false);
+    //$locationProvider.html5Mode(false);
 }]);
 
 
