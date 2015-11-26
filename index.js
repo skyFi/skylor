@@ -2,6 +2,43 @@
  * Created by skylor on 2015/8/14.
  */
 
+var app = angular.module("app", ["ngRoute"]);
+
+app.controller('IndexController', ['$scope', function ($scope) {
+    var self = this;
+    self.menu = {
+        home: '天空之都',
+        album: '转角码头'
+    };
+}]);
+
+app.controller('HomeController', ['$scope', function ($scope) {
+    $scope.home = 'homeqqqqqqq'
+}]);
+
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+
+    $routeProvider
+        .when('/home', {
+            templateUrl: 'lib/template/home/home.html',
+            controller: 'HomeController',
+            resolve: {
+                // I will cause a 1 second delay
+                delay: function ($q, $timeout) {
+                    var delay = $q.defer();
+                    $timeout(delay.resolve, 1000);
+                    return delay.promise;
+                }
+            }
+        })
+        .otherwise('/', {
+            templateUrl: 'lib/template/home/home.html',
+            controller: 'HomeController'
+        });
+
+    // configure html5 to get links working on jsfiddle
+    $locationProvider.html5Mode(false);
+}]);
 
 
 $(function () {

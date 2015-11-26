@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-ng-app="app">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,16 +16,12 @@
     <link rel="stylesheet" href="lib/css/main.css" charset="utf-8">
 </head>
 <body>
-    <div id="st-container" class="st-container">
+    <div id="st-container" class="st-container" data-ng-controller="IndexController as index">
 
         <nav class="st-menu st-effect" id="menu">
-            <h2 class="icon icon-lab">Sidebar</h2>
+            <h2>{{index.menu.home}}</h2>
             <ul>
-                <li><a class="icon icon-data" href="#">Data Management</a></li>
-                <li><a class="icon icon-location" href="#">Location</a></li>
-                <li><a class="icon icon-study" href="#">Study</a></li>
-                <li><a class="icon icon-photo" href="#">Collections</a></li>
-                <li><a class="icon icon-wallet" href="#">Credits</a></li>
+                <li><a class="icon icon-data" href="/skylor/#/home">{{index.menu.album}}</a></li>
             </ul>
         </nav>
         <div class="st-pusher">
@@ -34,15 +30,16 @@
                     <div id="st-trigger-effects">
                         <span data-effect="st-effect" class="menu"></span>
                     </div>
-                    <header>
-                        <canvas id='canvas' width='150' height='150'>
-                            Canvas not supported (clock)
-                        </canvas>
-                        <h1>（Sidebar Transitions）</h1>
-                    </header>
-                    <div class="main clearfix">
+                    <!--<header>-->
+                        <!--<canvas id='canvas' width='150' height='150'>-->
+                            <!--Canvas not supported (clock)-->
+                        <!--</canvas>-->
+                        <!--<h1>（Sidebar Transitions）</h1>-->
+                    <!--</header>-->
+                    <!--<div class="main clearfix">-->
 
-                    </div>
+                    <!--</div>-->
+                    <div ng-view></div>
                     <div class="footer-banner" style="width:728px; margin:160px auto 0">
                         2015 - ? © skylor.min All Rights Reserved
                     </div>
@@ -55,10 +52,11 @@
 <script src="lib/js/lib/jquery/jquery-2.1.3.min.js"></script>
 <script src="lib/js/lib/particles/particles.min.js"></script>
 <script src="lib/js/lib/angular-1.3.15/angular.min.js"></script>
+<script src="lib/js/lib/angular-1.3.15/angular-route.min.js"></script>
 <script src="lib/js/lib/jquery/skylorjquery-1.1.1.js"></script>
 <script src="lib/js/lib/skylor/modernizr.custom.js"></script>
 <script src="lib/js/lib/skylor/classie.js"></script>
 <script src="lib/js/lib/skylor/sidebarEffects.js"></script>
 
-<script src="lib/js/index.js"></script>
+<script src="index.js"></script>
 </html>
