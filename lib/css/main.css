@@ -30,3 +30,17 @@ html.imprint, body.imprint {
     height: 100%;
     overflow: auto;
 }
+
+.menu {
+    cursor: pointer;
+}
+
+.menu:before {
+    content: url("../images/menu-open.svg");
+    margin: .2em;
+}
+
+.open:before {
+    content: url("../images/menu-close.svg");
+    margin: .2em;
+}
