@@ -18,15 +18,15 @@ app.controller('HomeController', ['$scope', function ($scope) {
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/index');
     $stateProvider
         .state('index',{
-            url           : '/',
-            templateUrl    : 'index.html'
+            url           : '/index',
+            templateUrl    : 'lib/template/index.html'
         })
         .state('home',{
             url           : '/home',
-            templateUrl     : 'lib/template/home/home.html'
+            templateUrl     : 'lib/template/home.html'
         });
     // configure html5 to get links working on jsfiddle
     //$locationProvider.html5Mode(false);

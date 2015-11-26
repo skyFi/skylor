@@ -19,7 +19,7 @@
     <div id="st-container" class="st-container" data-ng-controller="IndexController as index">
 
         <nav class="st-menu st-effect" id="menu">
-            <h2>{{index.menu.home}}</h2>
+            <h2><a ui-sref="index">{{index.menu.home}}</a></h2>
             <ul>
                 <li><a class="icon icon-data" ui-sref="home">{{index.menu.album}}</a></li>
             </ul>
