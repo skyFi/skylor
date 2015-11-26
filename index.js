@@ -18,10 +18,10 @@ app.controller('HomeController', ['$scope', function ($scope) {
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/index');
+    $urlRouterProvider.otherwise('/');
     $stateProvider
         .state('index',{
-            url           : '/index',
+            url           : '/',
             templateUrl    : 'index.html'
         })
         .state('home',{
