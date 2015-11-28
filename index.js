@@ -18,15 +18,28 @@ app.controller('HomeController', ['$scope', function ($scope) {
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/index');
+    $urlRouterProvider.otherwise('/album');
     $stateProvider
-        .state('index',{
-            url           : '/index',
-            templateUrl    : 'lib/template/index.html'
-        })
         .state('home',{
             url           : '/home',
-            templateUrl     : 'lib/template/home.html'
+            templateUrl    : 'lib/template/home.html'
+        })
+        .state('album',{
+            url           : '/album',
+            templateUrl     : 'lib/template/album.html' ,
+            controller: function ($scope) {
+
+                star();
+
+                showAlbum();
+
+                $('.st-content').addClass('album-bg-color');
+
+                $scope.$on('$destroy', function() {
+
+                    $('.st-content').removeClass('album-bg-color');
+                });
+            }
         });
     // configure html5 to get links working on jsfiddle
     //$locationProvider.html5Mode(false);
@@ -37,18 +50,20 @@ $(function () {
 
     clock('canvas');
 
-    //star
-    //star();
-
     //timeFly();
     //setInterval(timeFly, 10 * 1000);
 
 });
 
+function showAlbum() {
+    _.forEach($('#album img'), function(img, index) {
+
+    })
+}
+
 //star background
 function star() {
-    //id='skylor'
-    particlesJS.load('skylor', 'skylor.json', function() {
+    particlesJS.load('star', 'star.json', function() {
         console.log('Hello, Welcome to Skylor.min`s world!');
     });
 }

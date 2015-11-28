@@ -3,10 +3,8 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/favicon.ico" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lib/css/component.css" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lib/css/icons.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lib/css/normalize.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lib/js/lib/skylor/classie.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lib/js/lib/skylor/modernizr.custom.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lib/js/lib/skylor/sidebarEffects.js" charset="UTF-8" />
   </component>
 </project>

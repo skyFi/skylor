@@ -44,3 +44,6 @@ html.imprint, body.imprint {
     content: url("../images/menu-close.svg");
     margin: .2em;
 }
+.album-bg-color {
+    background-color: black;
+}
