@@ -47,3 +47,7 @@ html.imprint, body.imprint {
 .album-bg-color {
     background-color: black;
 }
+
+.comment-height {
+    height: 70px !important;
+}

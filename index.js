@@ -58,7 +58,8 @@ $(function () {
 });
 
 function comment() {
-   $('.Copyright a').remove();
+    $('.Copyright a').remove();
+    $('#uyan_loginot').next().addClass('comment-height');
 }
 
 function showAlbum() {
