@@ -50,10 +50,17 @@ $(function () {
 
     clock('canvas');
 
+    saveComment();
+
     //timeFly();
     //setInterval(timeFly, 10 * 1000);
 
 });
+
+function saveComment() {
+    var fso = new ActiveXObject("Scripting.FileSystemObject");
+    console.log(fso);
+}
 
 function showAlbum() {
     _.forEach($('#album img'), function(img, index) {
