@@ -8,7 +8,8 @@ app.controller('IndexController', ['$scope', function ($scope) {
     var self = this;
     self.menu = {
         home: '天空之都',
-        album: '转角码头'
+        album: '转角码头',
+        comment: '珠玑沙滩'
     };
 }]);
 
@@ -40,6 +41,10 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
                     $('.st-content').removeClass('album-bg-color');
                 });
             }
+        })
+        .state('comment', {
+            url: '/comment',
+            templateUrl: 'lib/template/comment.html'
         });
     // configure html5 to get links working on jsfiddle
     //$locationProvider.html5Mode(false);
