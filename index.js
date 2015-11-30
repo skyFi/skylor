@@ -17,17 +17,17 @@ app.controller('HomeController', ['$scope', function ($scope) {
     $scope.home = 'homeqqqqqqq'
 }]);
 
-app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/album');
     $stateProvider
-        .state('home',{
-            url           : '/home',
-            templateUrl    : 'lib/template/home.html'
+        .state('home', {
+            url: '/home',
+            templateUrl: 'lib/template/home.html'
         })
-        .state('album',{
-            url           : '/album',
-            templateUrl     : 'lib/template/album.html' ,
+        .state('album', {
+            url: '/album',
+            templateUrl: 'lib/template/album.html',
             controller: function ($scope) {
 
                 star();
@@ -36,7 +36,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 
                 $('.st-content').addClass('album-bg-color');
 
-                $scope.$on('$destroy', function() {
+                $scope.$on('$destroy', function () {
 
                     $('.st-content').removeClass('album-bg-color');
                 });
@@ -47,7 +47,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
             templateUrl: 'lib/template/comment.html'
         });
     // configure html5 to get links working on jsfiddle
-    //$locationProvider.html5Mode(false);
+    //$locationProvider.html5Mode(true);
 }]);
 
 
@@ -69,20 +69,20 @@ function comment() {
 }
 
 function showAlbum() {
-    _.forEach($('#album img'), function(img, index) {
+    _.forEach($('#album img'), function (img, index) {
 
     })
 }
 
 //star background
 function star() {
-    particlesJS.load('star', 'star.json', function() {
+    particlesJS.load('star', 'star.json', function () {
         console.log('Hello, Welcome to Skylor.min`s world!');
     });
 }
 
 //change background by time
-function timeFly(){
+function timeFly() {
     var time = new Date().getHours();
     if (time >= 10 && time <= 15) {
         $('#skylor').css({
