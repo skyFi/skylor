@@ -50,16 +50,15 @@ $(function () {
 
     clock('canvas');
 
-    saveComment();
+    comment();
 
     //timeFly();
     //setInterval(timeFly, 10 * 1000);
 
 });
 
-function saveComment() {
-    var fso = new ActiveXObject("Scripting.FileSystemObject");
-    console.log(fso);
+function comment() {
+   $('.Copyright a').remove();
 }
 
 function showAlbum() {
