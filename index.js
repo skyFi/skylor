@@ -60,6 +60,7 @@ $(function () {
 function comment() {
     $('.Copyright a').remove();
     $('#uyan_loginot').next().addClass('comment-height');
+    $("div[style='height: 58px; overflow: hidden; padding: 0 0 30px 0;']").addClass('comment-height');
 }
 
 function showAlbum() {
