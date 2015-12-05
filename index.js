@@ -44,7 +44,12 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         })
         .state('comment', {
             url: '/comment',
-            templateUrl: 'lib/template/comment.html'
+            templateUrl: 'lib/template/comment.html',
+            controller: function ($state, $stateParams) {
+                $state.transitionTo($state.current, $stateParams, {
+                    reload: true
+                });
+            }
         });
     // configure html5 to get links working on jsfiddle
     //$locationProvider.html5Mode(true);
@@ -66,9 +71,6 @@ function comment() {
     $('.Copyright a').remove();
     $('#uyan_loginot').next().addClass('comment-height');
     $("div[style='height: 58px; overflow: hidden; padding: 0 0 30px 0;']").addClass('comment-height');
-    $('#comment').click(function () {
-        location.reload(true);
-    });
 }
 
 function showAlbum() {
