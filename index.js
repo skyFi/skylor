@@ -29,24 +29,61 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             url: '/album',
             templateUrl: 'lib/template/album.html',
             controller: function ($scope) {
+                var self = this;
+
+                var imgUrl = [
+                    'lib/images/dusk.jpg',
+                    'lib/images/day.jpg',
+                    'lib/images/morning.jpg',
+                    'lib/images/night.jpg',
+                    'lib/images/zzsc1.png',
+                    'lib/images/zzsc2.png',
+                    'lib/images/zzsc3.png',
+                    'lib/images/zzsc4.png',
+                    'lib/images/zzsc5.png',
+                    'lib/images/zzsc6.png'
+                ];
+                preLoadImg(imgUrl);
 
                 star();
 
-                showAlbum();
+                init();
+                showMyLove();
 
-                $('.st-content').addClass('album-bg-color');
+                $(function () {
+                    upup();
 
-                $scope.$on('$destroy', function () {
+                    $('.st-content').addClass('album-bg-color');
 
-                    $('.st-content').removeClass('album-bg-color');
+                    $scope.$on('$destroy', function () {
+
+                        $('.st-content').removeClass('album-bg-color');
+                    });
                 });
+
+                function upup() {
+                    setTimeout(function () {
+                        $('.album-content>#imgs').animate({top: -($('#imgs').height() - $('.album-content').height()) + "px"}, 1000 * 60 * 3, 'linear');
+                        console.log(($('#imgs').height()))
+                    }, 1000 * 10)
+
+                }
+
+                function preLoadImg(arr) {
+                    var newImages = [];
+                    var arr = (typeof arr != "object") ? [arr] : arr;
+                    for (var i = 0; i < arr.length; i++) {
+                        newImages[i] = new Image();
+                        newImages[i].src = arr[i];
+                    }
+                }
             }
         })
         .state('comment', {
             url: '/comment',
             templateUrl: 'lib/template/comment.html',
             controller: function ($state, $stateParams) {
-
+                initBaby();
             }
         });
     // configure html5 to get links working on jsfiddle
@@ -56,7 +93,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
 
 $(function () {
 
-    clock('canvas');
+    //clock('canvas');
 
     comment();
 
@@ -65,16 +102,11 @@ $(function () {
 
 });
 
+
 function comment() {
     $('.Copyright a').remove();
     $('#uyan_loginot').next().addClass('comment-height');
     $("div[style='height: 58px; overflow: hidden; padding: 0 0 30px 0;']").addClass('comment-height');
-}
-
-function showAlbum() {
-    _.forEach($('#album img'), function (img, index) {
-
-    })
 }
 
 //star background
