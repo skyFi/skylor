@@ -140,6 +140,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
 
                     setTimeout(function() {
                         $('.loveWord').css({"background-color": "#F3EFE0"});
+                        $('.loveWord').css({"z-index": "3"});
                         initBaby();
                     }, pusTime );
                 });
@@ -177,7 +178,7 @@ $(function () {
 
     //clock('canvas');
 
-    comment();
+    //comment();
 
     //timeFly();
     //setInterval(timeFly, 10 * 1000);
