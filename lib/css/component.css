@@ -14,13 +14,14 @@ body,
 }
 
 .st-content {
-	overflow-y: scroll;
+	overflow-y: hidden;
 	background: #f3efe0;
 }
 
 .st-content,
 .st-content-inner {
 	position: relative;
+	height: 100%;
 }
 
 .st-container {

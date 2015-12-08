@@ -64,9 +64,9 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                     var worldLove_2 = ['生', '日', '快', '乐', '哟', '<br/>！', '<br/>！<br/>', '哈', '哈', '<br/>，<br/>', '想', '不', '到', '吧', '<br/>.', '<br/>.', '<br/>.'];
                     var worldLove_3 = ['我', '家', '宝', '宝', '变', '成', '大', '美', '女', '了', '呀', '<br/>.', '<br/>.', '<br/>.'];
                     var worldLove_4 = ['辞', '去', '旧', '岁', '<br/>，', '囍', '迎', '秒', '龄', '<br/>，<br/>', '年', '年', '十', '八', '岁'];
-                    var worldLove_5 = [''];
-                    var worldLove_6 = [''];
-                    var worldLove_7 = ['<br/>', '<br/>', '<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>', '混', '蛋'];
+                    var worldLove_5 = ['吾', '爱', '岁', '浓', '一', '岁', '<br>，', '年', '深', '一', '年'];
+                    var worldLove_6 = ['执', '子', '之', '手', '<br>，', '与', '子', '偕', '老'];
+                    var worldLove_7 = ['<br/>', '<br/>', '<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>', '<br>|', '<br>|', '楽', '楽'];
 
                     var time = 0;
 
@@ -136,13 +136,17 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                             $('.list_7').html(wordList_7[0]);
                         }, time + pusTime)
                     });
+                    pusTime += time;
 
+                    setTimeout(function() {
+                        $('.loveWord').css({"background-color": "#F3EFE0"});
+                        initBaby();
+                    }, pusTime );
                 });
-
+                $scope.showStart = false;
                 function upup() {
                     setTimeout(function () {
                         $('.album-content>#imgs').animate({top: -($('#imgs').height() - $('.album-content').height()) + "px"}, 1000 * 60 * 3, 'linear');
-                        console.log(($('#imgs').height()))
                     }, 1000 * 10)
 
                 }
@@ -161,7 +165,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             url: '/comment',
             templateUrl: 'lib/template/comment.html',
             controller: function ($state, $stateParams) {
-                initBaby();
+                //initBaby();
             }
         });
     // configure html5 to get links working on jsfiddle
