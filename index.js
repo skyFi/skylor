@@ -46,9 +46,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             url: '/comment',
             templateUrl: 'lib/template/comment.html',
             controller: function ($state, $stateParams) {
-                $state.transitionTo($state.current, $stateParams, {
-                    reload: true
-                });
+
             }
         });
     // configure html5 to get links working on jsfiddle
