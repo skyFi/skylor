@@ -51,3 +51,11 @@ html.imprint, body.imprint {
 .comment-height {
     height: 70px !important;
 }
+
+.star {
+    position: absolute;
+    top: 0;
+}
+.album-content {
+    position: relative;
+}
