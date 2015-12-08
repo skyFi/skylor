@@ -59,6 +59,84 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
 
                         $('.st-content').removeClass('album-bg-color');
                     });
+
+                    var worldLove_1 = ['亲', '爱', '的', '宝', '宝', '<br/>：'];
+                    var worldLove_2 = ['生', '日', '快', '乐', '哟', '<br/>！', '<br/>！<br/>', '哈', '哈', '<br/>，<br/>', '想', '不', '到', '吧', '<br/>.', '<br/>.', '<br/>.'];
+                    var worldLove_3 = ['我', '家', '宝', '宝', '变', '成', '大', '美', '女', '了', '呀', '<br/>.', '<br/>.', '<br/>.'];
+                    var worldLove_4 = ['辞', '去', '旧', '岁', '<br/>，', '囍', '迎', '秒', '龄', '<br/>，<br/>', '年', '年', '十', '八', '岁'];
+                    var worldLove_5 = [''];
+                    var worldLove_6 = [''];
+                    var worldLove_7 = ['<br/>', '<br/>', '<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>', '混', '蛋'];
+
+                    var time = 0;
+
+                    var wordList_1 = _.fill(new Array(12), '');
+                    _.forEach(worldLove_1, function (word, index) {
+                        time = 500 * (index + 1);
+                        setTimeout(function () {
+                            wordList_1[0] += word;
+                            $('.list_1').html(wordList_1[0]);
+                        }, time)
+                    });
+
+                    var pusTime = time;
+                    var wordList_2 = _.fill(new Array(12), '');
+                    _.forEach(worldLove_2, function (word, index) {
+                        time = 500 * (index + 1);
+                        setTimeout(function () {
+                            wordList_2[0] += word;
+                            $('.list_2').html(wordList_2[0]);
+                        }, time + pusTime)
+                    });
+
+                    pusTime += time;
+                    var wordList_3 = _.fill(new Array(12), '');
+                    _.forEach(worldLove_3, function (word, index) {
+                        time = 500 * (index + 1);
+                        setTimeout(function () {
+                            wordList_3[0] += word;
+                            $('.list_3').html(wordList_3[0]);
+                        }, time + pusTime)
+                    });
+
+                    pusTime += time;
+                    var wordList_4 = _.fill(new Array(12), '');
+                    _.forEach(worldLove_4, function (word, index) {
+                        time = 500 * (index + 1);
+                        setTimeout(function () {
+                            wordList_4[0] += word;
+                            $('.list_4').html(wordList_4[0]);
+                        }, time + pusTime)
+                    });
+
+                    pusTime += time;
+                    var wordList_5 = _.fill(new Array(12), '');
+                    _.forEach(worldLove_5, function (word, index) {
+                        time = 500 * (index + 1);
+                        setTimeout(function () {
+                            wordList_5[0] += word;
+                            $('.list_5').html(wordList_5[0]);
+                        }, time + pusTime)
+                    });
+                    pusTime += time;
+                    var wordList_6 = _.fill(new Array(12), '');
+                    _.forEach(worldLove_6, function (word, index) {
+                        time = 500 * (index + 1);
+                        setTimeout(function () {
+                            wordList_6[0] += word;
+                            $('.list_6').html(wordList_6[0]);
+                        }, time + pusTime)
+                    });
+                    pusTime += time;
+                    var wordList_7 = _.fill(new Array(12), '');
+                    _.forEach(worldLove_7, function (word, index) {
+                        time = 500 * (index + 1);
+                        setTimeout(function () {
+                            wordList_7[0] += word;
+                            $('.list_7').html(wordList_7[0]);
+                        }, time + pusTime)
+                    });
+
                 });
 
                 function upup() {

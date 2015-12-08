@@ -87,7 +87,7 @@ html.imprint, body.imprint {
     height: 800px;
     width: 390px;
     color: white;
-    z-index: 2030;
+    z-index: 0;
 }
 #canvasContainer{
     position: absolute;
@@ -102,4 +102,32 @@ html.imprint, body.imprint {
     position: absolute;
     top: 0;
     left: 0;
+}
+.world {
+    position: absolute;
+    top: 170px;
+    width: 24px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.list_1 {
+    right: 20px;
+}
+.list_2 {
+    right: 80px;
+}
+.list_3 {
+    right: 110px;
+}
+.list_4 {
+    right: 170px;
+}
+.list_5 {
+    right: 200px;
+}
+.list_6 {
+    right: 260px;
+}
+.list_7 {
+    right: 295px;
 }
