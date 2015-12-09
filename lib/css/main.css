@@ -151,6 +151,10 @@ html.imprint, body.imprint {
     height: 780px;
     float: left;
 }
+
+.love-slide > li > img {
+    width: 100%;
+}
 .up-throw {
     position: absolute;
     top: 0;
