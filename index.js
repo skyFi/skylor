@@ -14,7 +14,7 @@ app.controller('IndexController', ['$scope', function ($scope) {
 }]);
 
 app.controller('HomeController', ['$scope', function ($scope) {
-    $scope.home = 'homeqqqqqqq'
+    $scope.home = 'home'
 }]);
 
 app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
@@ -45,13 +45,20 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 ];
                 preLoadImg(imgUrl);
 
-                star();
+                try {
+                    star();
+                } catch (e) {
+                    console.error(e.message);
+                }
 
-                init();
-                showMyLove();
+                try {
+                    init();
+                    showMyLove();
+                } catch (e) {
+                    console.error(e.message);
+                }
 
                 $(function () {
-                    upup();
 
                     $('.st-content').addClass('album-bg-color');
 
@@ -138,19 +145,38 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                     });
                     pusTime += time;
 
-                    setTimeout(function() {
+                    var top = 0;
+                    var timer = 0;
+                    setTimeout(function () {
+                        for (var index = 1; index < $('.love-slide').children().size(); index++) {
+                            timer = 1000 * 15 * index;
+
+                            (function (index) {
+                                setTimeout(function () {
+                                    indexLove(index)
+                                }, timer);
+                            })(index);
+                        }
+                    }, pusTime + 1000 * 3);
+
+                    setTimeout(function () {
                         $('.loveWord').css({"background-color": "#F3EFE0"});
                         $('.loveWord').css({"z-index": "3"});
                         initBaby();
-                    }, pusTime );
-                });
-                $scope.showStart = false;
-                function upup() {
-                    setTimeout(function () {
-                        $('.album-content>#imgs').animate({top: -($('#imgs').height() - $('.album-content').height()) + "px"}, 1000 * 60 * 3, 'linear');
-                    }, 1000 * 10)
+                    }, pusTime + timer + 1000 * 6);
 
-                }
+                    $('.love-slide').hover(function() {
+
+                    }, function () {
+
+                    })
+
+                    function indexLove(index) {
+                        var top = $($('.love-slide').children().get(0)).height() * index;
+                        $('.album-content>#imgs').animate({top: -top + "px"}, 800, 'linear');
+                    }
+                });
+
 
                 function preLoadImg(arr) {
                     var newImages = [];

@@ -14,6 +14,10 @@ a:active { top: 2px; }
     overflow: hidden;
 }
 
+ul, li {
+    list-style-type: none;
+}
+
 html, body {
     height: 100%;
     overflow: hidden;
@@ -141,4 +145,9 @@ html.imprint, body.imprint {
 }
 .list_7 {
     right: 295px;
+}
+.love-slide > li {
+    width: 100%;
+    height: 780px;
+    float: left;
 }
