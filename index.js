@@ -76,12 +76,21 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                     var worldLove_7 = ['<br/>', '<br/>', '<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>', '<br>|', '<br>|', '楽', '楽'];
 
                     var time = 0;
+                    var f = [
+                            'arial', 'verdana', 'monospace',
+                            'consolas', 'impact', 'helveltica'
+                        ],
+                        c = [
+                            'ff00ff', '0000cd', '32cd32', '9370db',
+                            'c71585', 'fdf5e6', 'ff4500', 'ff0000', '20b2aa', '00ff00', 'faf0e6'
+                        ];
+
 
                     var wordList_1 = _.fill(new Array(12), '');
                     _.forEach(worldLove_1, function (word, index) {
                         time = 500 * (index + 1);
                         setTimeout(function () {
-                            wordList_1[0] += word;
+                            wordList_1[0] += randomText(word);
                             $('.list_1').html(wordList_1[0]);
                         }, time)
                     });
@@ -91,7 +100,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                     _.forEach(worldLove_2, function (word, index) {
                         time = 500 * (index + 1);
                         setTimeout(function () {
-                            wordList_2[0] += word;
+                            wordList_2[0] += randomText(word);
                             $('.list_2').html(wordList_2[0]);
                         }, time + pusTime)
                     });
@@ -101,7 +110,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                     _.forEach(worldLove_3, function (word, index) {
                         time = 500 * (index + 1);
                         setTimeout(function () {
-                            wordList_3[0] += word;
+                            wordList_3[0] += randomText(word);
                             $('.list_3').html(wordList_3[0]);
                         }, time + pusTime)
                     });
@@ -111,7 +120,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                     _.forEach(worldLove_4, function (word, index) {
                         time = 500 * (index + 1);
                         setTimeout(function () {
-                            wordList_4[0] += word;
+                            wordList_4[0] += randomText(word);
                             $('.list_4').html(wordList_4[0]);
                         }, time + pusTime)
                     });
@@ -121,7 +130,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                     _.forEach(worldLove_5, function (word, index) {
                         time = 500 * (index + 1);
                         setTimeout(function () {
-                            wordList_5[0] += word;
+                            wordList_5[0] += randomText(word);
                             $('.list_5').html(wordList_5[0]);
                         }, time + pusTime)
                     });
@@ -130,7 +139,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                     _.forEach(worldLove_6, function (word, index) {
                         time = 500 * (index + 1);
                         setTimeout(function () {
-                            wordList_6[0] += word;
+                            wordList_6[0] += randomText(word);
                             $('.list_6').html(wordList_6[0]);
                         }, time + pusTime)
                     });
@@ -139,25 +148,19 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                     _.forEach(worldLove_7, function (word, index) {
                         time = 500 * (index + 1);
                         setTimeout(function () {
-                            wordList_7[0] += word;
+                            wordList_7[0] += randomText(word);
                             $('.list_7').html(wordList_7[0]);
                         }, time + pusTime)
                     });
                     pusTime += time;
 
-                    var top = 0;
-                    var timer = 0;
-                    setTimeout(function () {
-                        for (var index = 1; index < $('.love-slide').children().size(); index++) {
-                            timer = 1000 * 15 * index;
+                    var timer = 1000 * 2;
+                    var indexLoveTimer = null;
+                    var index = 1;
 
-                            (function (index) {
-                                setTimeout(function () {
-                                    indexLove(index)
-                                }, timer);
-                            })(index);
-                        }
-                    }, pusTime + 1000 * 3);
+                    setTimeout(function () {
+                        intervalPic();
+                    }, 1000 * 3);
 
                     setTimeout(function () {
                         $('.loveWord').css({"background-color": "#F3EFE0"});
@@ -165,16 +168,60 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                         initBaby();
                     }, pusTime + timer + 1000 * 6);
 
-                    $('.love-slide').hover(function() {
+                    $('.up-throw').click(function () {
+                        indexLoveTimer && clearInterval(indexLoveTimer);
+                        indexLoveTimer = null;
+                        index--;
+                        if (index < 1) {
+                            index = 1;
+                        }
+                        indexLove(index);
 
-                    }, function () {
+                        setTimeout(function () {
+                            !indexLoveTimer && intervalPic();
+                        }, 5000);
+                    });
 
-                    })
+                    $('.down-throw').click(function () {
+                        indexLoveTimer && clearInterval(indexLoveTimer);
+                        indexLoveTimer = null;
+                        index++;
+                        if (index > $('.love-slide').children().size()) {
+                            index = $('.love-slide').children().size();
+                        }
+                        indexLove(index);
+
+                        setTimeout(function () {
+                            !indexLoveTimer && intervalPic();
+                        }, 5000);
+                    });
+
+                    function intervalPic() {
+                        indexLoveTimer = setInterval(function () {
+                            if (index >= $('.love-slide').children().size() || index < 1) {
+                                clearInterval(indexLoveTimer);
+                            } else {
+                                index++;
+                                indexLove(index);
+                            }
+                        }, timer)
+                    }
 
                     function indexLove(index) {
-                        var top = $($('.love-slide').children().get(0)).height() * index;
+                        var top = $($('.love-slide').children().get(0)).height() * (index - 1);
                         $('.album-content>#imgs').animate({top: -top + "px"}, 800, 'linear');
                     }
+
+                    function randomText(text) {
+                        var r = f[Math.floor(Math.random() * f.length)],
+                        // Random array colors
+                            sh = c[Math.floor(Math.random() * c.length)],
+                            st = 'color:#' + sh +
+                                //';font-family: ' + r +
+                                ';text-shadow:0px 1px 0px #' + sh + ',0px 1px 0px #' + sh + ',0px 1px 0px #' + sh + ',0px 1px 0px #' + sh + ', 0px 1px 0px  #' + sh + ',0px 1px 0px #' + sh + ', 0px 1px 0px #' + sh + ',0px 1px 7px #' + sh;
+                        return '<span style="' + st + '">' + text + '</span>';
+                    }
+
                 });
 
 

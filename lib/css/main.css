@@ -70,8 +70,8 @@ html.imprint, body.imprint {
     padding-left:20px;
     margin-right: 400px;
     text-align: center;
-    overflow-y: hidden;
-    z-index: 0;
+    overflow: hidden;
+    z-index: 2;
 }
 
 .album-content img {
@@ -150,4 +150,18 @@ html.imprint, body.imprint {
     width: 100%;
     height: 780px;
     float: left;
+}
+.up-throw {
+    position: absolute;
+    top: 0;
+    height: 50%;
+    width: 100%;
+    z-index: 3;
+}
+.down-throw {
+    position: absolute;
+    bottom: 0;
+    height: 50%;
+    width: 100%;
+    z-index: 3;
 }
